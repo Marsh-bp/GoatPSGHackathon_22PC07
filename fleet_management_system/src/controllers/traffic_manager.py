@@ -19,7 +19,5 @@ class TrafficManager:
     def release_lane(self, a, b):
         key = self.get_lane_key(a, b)
         if key in self.lane_occupancy:
-            print(f"Lane {key} released by Robot {self.lane_occupancy[key]}.")
             del self.lane_occupancy[key]
-        else:
-            print(f"Lane {key} is already free.")
+    

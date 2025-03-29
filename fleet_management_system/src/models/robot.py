@@ -53,9 +53,6 @@ class Robot:
         elif self.state == "waiting":
             if self.traffic_manager.request_lane(self.id, *self.current_lane):
                 self.state = "moving"
-                
-
-
 
     def calculate_total_distance(self, path):
         total_distance = 0
@@ -88,9 +85,6 @@ class Robot:
                     self.traffic_manager.release_lane(*lane_key)
 
         self.draw()
-
-
-
 
     def interpolate_position(self):
             start_pos = self.nav_graph.vertices[self.current_lane[0]]["pos"]
