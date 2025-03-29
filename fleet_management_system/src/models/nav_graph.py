@@ -28,12 +28,17 @@ class NavGraph:
         from collections import deque
         queue = deque([(start, [start])])
         visited = {start}
+
         while queue:
             current, path = queue.popleft()
             if current == goal:
+                print(f"Path found from {start} to {goal}: {path}")  # Debugging line
                 return path
+
             for neighbor in self.adj[current]:
                 if neighbor not in visited:
                     visited.add(neighbor)
                     queue.append((neighbor, path + [neighbor]))
+
+        print(f"No path found from {start} to {goal}")  # Debugging line
         return None
