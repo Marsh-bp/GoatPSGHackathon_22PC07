@@ -12,7 +12,7 @@ def main():
     root = tk.Tk()
     root.title("Fleet Management System")
 
-    canvas = tk.Canvas(root, width=1200, height=800, bg="white")
+    canvas = tk.Canvas(root, width=1200, height=800, bg="beige")
     canvas.pack()
 
     nav_graph = NavGraph(nav_graph_data)

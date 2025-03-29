@@ -1,3 +1,2 @@
 tkinter       # Used for GUI, typically included in Python's standard library
-numpy         # If you use NumPy for advanced calculations or data handling (optional)
-matplotlib    # If any visual debugging or plotting is needed (optional)
+

@@ -32,7 +32,6 @@ class NavGraph:
         while queue:
             current, path = queue.popleft()
             if current == goal:
-                print(f"Path found from {start} to {goal}: {path}")  # Debugging line
                 return path
 
             for neighbor in self.adj[current]:
@@ -40,5 +39,4 @@ class NavGraph:
                     visited.add(neighbor)
                     queue.append((neighbor, path + [neighbor]))
 
-        print(f"No path found from {start} to {goal}")  # Debugging line
         return None

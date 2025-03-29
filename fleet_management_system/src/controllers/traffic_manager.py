@@ -5,15 +5,21 @@ class TrafficManager:
     def get_lane_key(self,a ,b):
         return tuple(sorted((a,b)))
     
-    def request_lane(self, robot_id, a ,b):
-        key = self.get_lane_key(a,b)
+    def request_lane(self, robot_id, a, b):
+        key = self.get_lane_key(a, b)
         if key in self.lane_occupancy:
-            return False
-        else:
-            self.lane_occupancy[key] = robot_id
+            current_holder = self.lane_occupancy[key]
+            if current_holder == robot_id:
+                return True  
+            return False  
+        self.lane_occupancy[key] = robot_id
         return True
+
     
-    def release_lane(self, a,b ):
-        key = self.get_lane_key(a,b)
+    def release_lane(self, a, b):
+        key = self.get_lane_key(a, b)
         if key in self.lane_occupancy:
+            print(f"Lane {key} released by Robot {self.lane_occupancy[key]}.")
             del self.lane_occupancy[key]
+        else:
+            print(f"Lane {key} is already free.")

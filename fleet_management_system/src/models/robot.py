@@ -19,33 +19,31 @@ class Robot:
         self.gui_item = None
     
     def assign_path(self, path):
-        if path and len(path) > 1:  # Ensure the path is valid
-            self.target_path = path[1:]  # Skip the current vertex
-            self.current_lane = (path[0], path[1])  # Set the first lane
+        if path and len(path) > 1:  
+            self.target_path = path[1:]  
+            self.current_lane = (path[0], path[1])  
             self.state = "moving"
-            self.move_progress = 0  # Reset progress for the new task
+            self.move_progress = 0  
         else:
             print(f"Robot {self.id}: Invalid path assignment.")
-
 
     def update(self):
         if self.state == "moving":
             if self.current_lane is None:
+                print(f"Robot {self.id}: Current lane is None. Cannot move.")
                 self.state = "idle"
                 return
 
-            # Check if the lane is free
-            if self.move_progress == 0 and not self.request_lane():
+            if self.move_progress == 0 and not self.traffic_manager.request_lane(self.id, *self.current_lane):
                 self.state = "waiting"
+                print(f"Robot {self.id}: Waiting for lane {self.current_lane}.")
                 return
 
-            # Move along the lane
             self.move_progress += self.speed
-            if self.move_progress >= 1:  # Reached the end of the lane
+            if self.move_progress >= 1:  
                 self.arrive_at_vertex()
                 return
 
-            # Update position
             start_pos = self.nav_graph.vertices[self.current_lane[0]]["pos"]
             end_pos = self.nav_graph.vertices[self.current_lane[1]]["pos"]
             self.pos[0] = start_pos[0] + (end_pos[0] - start_pos[0]) * self.move_progress
@@ -53,9 +51,11 @@ class Robot:
             self.draw()
 
         elif self.state == "waiting":
-            # Try again to request the lane
-            if self.request_lane():
+            if self.traffic_manager.request_lane(self.id, *self.current_lane):
                 self.state = "moving"
+                
+
+
 
     def calculate_total_distance(self, path):
         total_distance = 0
@@ -69,37 +69,42 @@ class Robot:
     def request_lane(self):
         a, b = self.current_lane
         return self.traffic_manager.request_lane(self.id, a, b)
-    
- 
+
+
     def arrive_at_vertex(self):
         self.pos = list(self.nav_graph.vertices[self.current_lane[1]]["pos"])
-        self.traffic_manager.release_lane(*self.current_lane)  # Release the lane
-        self.current_vertex = self.current_lane[1]  # Update the current vertex
+        self.traffic_manager.release_lane(*self.current_lane) 
+        self.current_vertex = self.current_lane[1]  
         self.target_path.pop(0)
-        
+
         if self.target_path:
-            self.current_lane = (self.current_vertex, self.target_path[0])  # Set next lane
-            self.move_progress = 0  # Reset progress for the new lane
+            self.current_lane = (self.current_vertex, self.target_path[0])  
+            self.move_progress = 0 
         else:
-            self.state = "complete"  # Task is finished
+            self.state = "complete"  
             print(f"Robot {self.id}: Task completed.")
-        
+            for lane_key in list(self.traffic_manager.lane_occupancy.keys()):
+                if self.traffic_manager.lane_occupancy[lane_key] == self.id:
+                    self.traffic_manager.release_lane(*lane_key)
+
         self.draw()
 
 
+
+
     def interpolate_position(self):
-        start_pos = self.nav_graph.vertices[self.current_lane[0]]["pos"]
-        end_pos = self.nav_graph.vertices[self.current_lane[1]]["pos"]
-        self.pos[0] = start_pos[0] + (end_pos[0] - start_pos[0]) * self.move_progress
-        self.pos[1] = start_pos[1] + (end_pos[1] - start_pos[1]) * self.move_progress 
+            start_pos = self.nav_graph.vertices[self.current_lane[0]]["pos"]
+            end_pos = self.nav_graph.vertices[self.current_lane[1]]["pos"]
+            self.pos[0] = start_pos[0] + (end_pos[0] - start_pos[0]) * self.move_progress
+            self.pos[1] = start_pos[1] + (end_pos[1] - start_pos[1]) * self.move_progress 
 
     def draw(self):
-        x, y = self.pos  # Current position of the robot
-        if not self.gui_item:
-            # Create new GUI items if they don't exist
-            self.gui_item = self.canvas.create_oval(x - 10, y - 10, x + 10, y + 10, fill="blue")
-            self.text_item = self.canvas.create_text(x, y, text=str(self.id), fill="white")
-        else:
-            # Update the GUI item's position
-            self.canvas.coords(self.gui_item, x - 10, y - 10, x + 10, y + 10)
-            self.canvas.coords(self.text_item, x, y)  # Update text position to match the robot
+            x, y = self.pos 
+            if not self.gui_item:
+                
+                self.gui_item = self.canvas.create_oval(x - 10, y - 10, x + 10, y + 10, fill="blue")
+                self.text_item = self.canvas.create_text(x, y, text=str(self.id), fill="white")
+            else:
+                
+                self.canvas.coords(self.gui_item, x - 10, y - 10, x + 10, y + 10)
+                self.canvas.coords(self.text_item, x, y)  
