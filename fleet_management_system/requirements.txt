@@ -1,2 +1,1 @@
-tkinter       # Used for GUI, typically included in Python's standard library
-
+tkinter
