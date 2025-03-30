@@ -1,5 +1,7 @@
 # GoatPSGHackathon_22PC07
 
+<video controls src="demo.mp4" title="Title"></video>
+
 ## 1. To Load the Graph
 To load the graph, change the path in `main.py`:
 
