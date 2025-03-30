@@ -1,8 +1,8 @@
 import tkinter as tk
-from src.models.nav_graph import NavGraph
-from src.controllers.fleet_manager import FleetManager
-from src.controllers.traffic_manager import TrafficManager
-from src.gui.fleet_gui import FleetGUI
+from models.nav_graph import NavGraph
+from controllers.fleet_manager import FleetManager
+from controllers.traffic_manager import TrafficManager
+from gui.fleet_gui import FleetGUI
 
 def main():
     import json

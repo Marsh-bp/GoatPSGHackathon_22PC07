@@ -1,5 +1,5 @@
-from src.models.robot import Robot
-from src.utils.helpers import log_event, find_path
+from models.robot import Robot
+from utils.helpers import log_event, find_path
 
 
 class FleetManager:

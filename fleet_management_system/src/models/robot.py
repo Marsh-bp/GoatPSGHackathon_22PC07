@@ -1,5 +1,5 @@
 import math
-from src.utils.helpers import log_event
+from utils.helpers import log_event
 
 class Robot:
     id_counter = 1

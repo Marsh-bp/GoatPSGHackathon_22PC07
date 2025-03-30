@@ -1,4 +1,4 @@
-from src.models.nav_graph import NavGraph
+from models.nav_graph import NavGraph
 from collections import deque
 
 def log_event(message):

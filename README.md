@@ -1,5 +1,10 @@
 # GoatPSGHackathon_22PC07
 
+## Demo Video
+
+https://github.com/user-attachments/assets/073bdf99-2d05-475d-9ec5-0f01e0d948e4
+
+
 ## 1. To Load the Graph
 To load the graph, change the path in `main.py`:
 

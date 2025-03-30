@@ -1,4 +1,4 @@
-from src.utils.helpers import log_event
+from utils.helpers import log_event
 
 class TrafficManager:
     def __init__(self):
