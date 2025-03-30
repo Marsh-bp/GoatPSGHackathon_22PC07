@@ -50,7 +50,7 @@ The `requirements.txt` file contains all necessary dependencies for the program.
 ## 3. The GUI
 When you run the code, a GUI will pop up:
 
-![GUI Interface](https://i.imghippo.com/i/oMOv3369UAA.png)
+![GUI Interface](https://github.com/Marsh-bp/photos/blob/main/image-1.png)
 
 In the GUI, you can select any vertex to spawn a new robot:
 
