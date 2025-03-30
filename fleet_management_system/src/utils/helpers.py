@@ -8,7 +8,6 @@ def log_event(message):
 def find_path(start, goal, nav_graph):
     adjacency_list = nav_graph.build_adjacency_list()
 
-    # Initialize BFS queue and visited set
     queue = deque([(start, [start])])
     visited = {start}
 
@@ -17,7 +16,6 @@ def find_path(start, goal, nav_graph):
         if current == goal:
             return path
 
-        # Iterate over neighbors
         for neighbor in adjacency_list[current]:
             if neighbor not in visited:
                 visited.add(neighbor)
