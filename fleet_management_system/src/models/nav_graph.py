@@ -24,19 +24,4 @@ class NavGraph:
             adj[b].append(a)
         return adj
     
-    def find_path(self, start, goal):
-        from collections import deque
-        queue = deque([(start, [start])])
-        visited = {start}
-
-        while queue:
-            current, path = queue.popleft()
-            if current == goal:
-                return path
-
-            for neighbor in self.adj[current]:
-                if neighbor not in visited:
-                    visited.add(neighbor)
-                    queue.append((neighbor, path + [neighbor]))
-
-        return None
+    

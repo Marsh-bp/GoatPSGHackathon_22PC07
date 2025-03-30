@@ -1,5 +1,6 @@
 from src.models.robot import Robot
-from src.utils.helpers import log_event
+from src.utils.helpers import log_event, find_path
+
 
 class FleetManager:
     def __init__(self,nav_graph, traffic_manager, canvas):
@@ -16,7 +17,7 @@ class FleetManager:
         log_event(f"Robot {robot_id}: Spawned at vertex {vertex_index}.")
 
     def assign_task(self, robot, dest_index):
-        path = self.nav_graph.find_path(robot.current_vertex,dest_index)
+        path = find_path(robot.current_vertex,dest_index, self.nav_graph)
         if path:
             robot.assign_path(path)
             log_event(f"Robot {robot.id}: Task assigned to move to vertex {dest_index}.")
