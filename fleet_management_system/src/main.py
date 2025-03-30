@@ -6,7 +6,7 @@ from gui.fleet_gui import FleetGUI
 
 def main():
     import json
-    with open(r"fleet_management_system\data\nav_graph_2.json", "r") as file:
+    with open("data/nav_graph_2.json", "r") as file:
         nav_graph_data = json.load(file)["levels"]["l0"]
 
     root = tk.Tk()

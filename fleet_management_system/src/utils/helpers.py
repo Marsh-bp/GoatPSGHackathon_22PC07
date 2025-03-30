@@ -2,7 +2,7 @@ from models.nav_graph import NavGraph
 from collections import deque
 
 def log_event(message):
-    with open(r"fleet_management_system\src\logs\fleet_logs.txt", "a") as log_file:
+    with open("src/logs/fleet_logs.txt", "a") as log_file:
         log_file.write(message + "\n")
 
 def find_path(start, goal, nav_graph):
