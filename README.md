@@ -1,6 +1,6 @@
 # GoatPSGHackathon_22PC07
 
-## Demo
+## Demo video
 
 https://github.com/user-attachments/assets/073bdf99-2d05-475d-9ec5-0f01e0d948e4
 
