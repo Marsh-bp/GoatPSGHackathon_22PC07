@@ -54,7 +54,7 @@ When you run the code, a GUI will pop up:
 
 In the GUI, you can select any vertex to spawn a new robot:
 
-![Spawn Robot Interface](image-2.png)
+![Spawn Robot Interface](https://github.com/Marsh-bp/photos/blob/main/image-2.png)
 
 ---
 
@@ -63,17 +63,17 @@ To assign a task:
 
 1. **Select a robot**:
    Once you select a robot, you will get a message box like this:
-   ![Select Robot](image-3.png)
+   ![Select Robot](https://github.com/Marsh-bp/photos/blob/main/image-3.png)
 
 2. **Choose the destination vertex**:
    The robot will move to the assigned destination vertex:
-   ![Assign Destination](image-4.png)
+   ![Assign Destination](https://github.com/Marsh-bp/photos/blob/main/image-4.png)
 
 ---
 
 ## 5. Collision Avoidance
 The robots can avoid collisions with each other. If there is a collision, a robot will stop and wait for others to pass:
-![Collision Avoidance Example](image-5.png)
+![Collision Avoidance Example](https://github.com/Marsh-bp/photos/blob/main/image-5.png)
 
 ---
 
@@ -81,6 +81,6 @@ The robots can avoid collisions with each other. If there is a collision, a robo
 All robot actions are logged in the file `fleet_logs.txt`. The logs include events such as task assignments, lane usage, and task completions.
 
 **Example log:**
-![Log Example](image-6.png)
+![Log Example](https://github.com/Marsh-bp/photos/blob/main/image-6.png)
 
 ---
