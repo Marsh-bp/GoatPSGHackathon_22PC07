@@ -19,11 +19,11 @@ class Robot:
         self.speed = 0.02
         self.gui_item = None
     def assign_path(self, path):
-        if len(path) < 2:  # Ensure the path is valid
+        if len(path) < 2:  
             log_event(f"Robot {self.id}: Invalid path assigned {path}.")
             self.state = "idle"
             return
-        self.target_path = path[1:]  # Skip the starting vertex
+        self.target_path = path[1:] 
         self.current_lane = (path[0], path[1])
         self.state = "moving"
         self.move_progress = 0

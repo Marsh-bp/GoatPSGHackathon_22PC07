@@ -1,1 +1,49 @@
 
+Robot 1: Spawned at vertex 6.
+Robot 1: Assigned path [6, 7, 1, 8]
+Robot 1: Task assigned to move to vertex 8.
+Lane (6, 7) is now occupied by Robot 1.
+Robot 2: Spawned at vertex 0.
+Lane (6, 7) released by Robot 1.
+Robot 1: Arrived at vertex 7.
+Lane (1, 7) is now occupied by Robot 1.
+Robot 2: Assigned path [0, 1, 8, 9]
+Robot 2: Task assigned to move to vertex 9.
+Lane (0, 1) is now occupied by Robot 2.
+Lane (1, 7) released by Robot 1.
+Robot 1: Arrived at vertex 1.
+Lane (1, 8) is now occupied by Robot 1.
+Lane (0, 1) released by Robot 2.
+Robot 2: Arrived at vertex 1.
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Robot 2: Waiting for lane (1, 8).
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) released by Robot 1.
+Robot 1: Arrived at vertex 8.
+Robot 1: Task completed.
+Lane (1, 8) is now occupied by Robot 2.
+Robot 2: Resuming movement on lane (1, 8).
+Lane (1, 8) is occupied. Robot 2 cannot proceed.
+Lane (1, 8) released by Robot 2.
+Robot 2: Arrived at vertex 8.
+Lane (8, 9) is now occupied by Robot 2.
+Lane (8, 9) released by Robot 2.
+Robot 2: Arrived at vertex 9.
+Robot 2: Task completed.
