@@ -23,6 +23,8 @@ the requirements.txt contians the needed dependency for the program
 3. A GUI will pop up
 ![alt text](https://imagekit.io/tools/asset-public-link?detail=%7B%22name%22%3A%22image-1.png%22%2C%22type%22%3A%22image%2Fpng%22%2C%22signedurl_expire%22%3A%222028-03-29T10%3A15%3A43.764Z%22%2C%22signedUrl%22%3A%22https%3A%2F%2Fmedia-hosting.imagekit.io%2F5b01027ae39d4c85%2Fimage-1.png%3FExpires%3D1837937744%26Key-Pair-Id%3DK2ZIVPTIP2VGHC%26Signature%3D1G--LJxTE1UK~q7PvFCa~fdOIiAD3C1AulWHHH2-p71ZKYikzdS9hKNyxK-yvsohRVaJSnJxmH8DhylMpNZWkHrFVjuQSmYoVD0cWQUYa0TvqYeHnuv4EWisFSkTPJHq01M4w3UXzBM-k-H4vswW466360CMbWuLrQHh3DFFwDIPqV0MSlbvoC17~UY1RhTuBtSsMFFo5~dC6pUAMAYrZBi1GeHs6fNfXPrPWcZOg2IMa4KCprkgQ5kjVz2SB5rbSUYNZ1M9N9Bvtw4cB38d2hDcUo3HHzUmqRUJ-3hxj5mxoJ1P9yWndi~nLjO4Zz1o2MsfTD3UFbAwDO2W1zoZbA__%22%7D)
 
+
+
 here you can select any vertex to spawn new robot
 ![alt text](image-2.png)
 
