@@ -31,7 +31,7 @@ here you can select any vertex to spawn new robot
 the robot will be mentioned by robot_id (i.e 1,2,3....), you can spawn multiple robots also you can
 spawn robots in real-time without interrupting the navigating robots.
 
-4. To assign task:
+4. To assign task
 
 select the robot you want to assign the task
 For example we select robot 1, once selected you will get a message box as
